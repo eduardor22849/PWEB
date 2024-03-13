@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register/Forgot Password</title>
+    <style>
+        #login_section, #register_section, #forgot_password_section {
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="login_section">
+        <h2>Login</h2>
+        <form action="login.php" method="POST">
+            <div>
+                <label for="login_username">Username:</label><br>
+                <input type="text" id="login_username" name="username"><br>
+            </div>
+            <div>
+                <label for="login_password">Password:</label><br>
+                <input type="password" id="login_password" name="password"><br>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+        <div id="button_container">
+            <button onclick="showRegister()">Register</button>
+            <button onclick="showForgotPassword()">Forgot Password</button>
+        </div>
+    </div>
+
+    <div id="register_section" style="display: none;">
+        <h2>Register</h2>
+        <form action="register.php" method="POST">
+            <div>
+                <label for="register_username">Username:</label><br>
+                <input type="text" id="register_username" name="username"><br>
+            </div>
+            <div>
+                <label for="register_email">Email:</label><br>
+                <input type="email" id="register_email" name="email"><br>
+            </div>
+            <div>
+                <label for="register_password">Password:</label><br>
+                <input type="password" id="register_password" name="password"><br>
+            </div>
+            <div>
+                <label for="confirm_password">Confirm Password:</label><br>
+                <input type="password" id="confirm_password" name="confirm_password"><br>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+        <div id="button_container">
+            <button onclick="showLogin()">Back</button>
+        </div>
+    </div>
+
+    <div id="forgot_password_section" style="display: none;">
+        <h2>Forgot Password</h2>
+        <p>Enter your email to reset your password.</p>
+        <form action="forgot_password.php" method="POST">
+            <div>
+                <label for="forgot_password_email">Email:</label><br>
+                <input type="email" id="forgot_password_email" name="email"><br>
+            </div>
+            <input type="submit" value="Reset Password">
+        </form>
+        <div id="button_container">
+            <button onclick="showLogin()">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function showRegister() {
+            document.getElementById("login_section").style.display = "none";
+            document.getElementById("register_section").style.display = "block";
+            document.getElementById("forgot_password_section").style.display = "none";
+        }
+
+        function showForgotPassword() {
+            document.getElementById("login_section").style.display = "none";
+            document.getElementById("register_section").style.display = "none";
+            document.getElementById("forgot_password_section").style.display = "block";
+        }
+
+        function showLogin() {
+            document.getElementById("login_section").style.display = "block";
+            document.getElementById("register_section").style.display = "none";
+            document.getElementById("forgot_password_section").style.display = "none";
+        }
+    </script>
+</body>
+</html>
