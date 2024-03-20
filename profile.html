@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: left;
+        }
+        #back_button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 20px;
+        }
+        #back_button:hover {
+            background-color: #45a049;
+        }
+        #profile_container {
+            margin: 50px auto;
+            width: 50%;
+            text-align: center;
+        }
+        #profile_image {
+            margin-bottom: 20px;
+        }
+        #profile_form {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        #profile_form input {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+        }
+        #save_button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #save_button:hover {
+            background-color: #45a049;
+        }
+        #logo {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <button id="back_button" onclick="goBack()">Back</button>
+    </div>
+    <div id="profile_container">
+        <h2>Manage Profile</h2>
+        <div id="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div id="profile_image">
+            <!-- Aqui vai a imagem de perfil -->
+        </div>
+        <form id="profile_form" action="#" method="POST">
+            <input type="text" id="name" name="name" placeholder="Nome">
+            <br>
+            <input type="email" id="email" name="email" placeholder="Email">
+            <br>
+            <button id="save_button">Gravar</button>
+        </form>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
+
+
